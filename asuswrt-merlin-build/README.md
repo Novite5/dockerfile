@@ -11,7 +11,7 @@
 编译能够在 Merlin、Tomato 固件上运行的程序之前，需要先获取 Merlin 固件源码(需要其交叉编译工具链)，下载地址可从 [Merlin Release](https://github.com/RMerl/asuswrt-merlin/releases) 获取
 
 ``` sh
-export ASUSWRT_MERLIN_VERSION=380.66
+export ASUSWRT_MERLIN_VERSION=380.70
 wget https://github.com/RMerl/asuswrt-merlin/archive/${ASUSWRT_MERLIN_VERSION}.tar.gz
 tar -zxf ${ASUSWRT_MERLIN_VERSION}.tar.gz
 mv asuswrt-merlin-${ASUSWRT_MERLIN_VERSION} asuswrt-merlin
@@ -32,13 +32,13 @@ docker run -dt --name build -v /data/asuswrt-merlin:/home/asuswrt-merlin -v /dat
 
 ### 3、进入容器编译
 
-容器运行后，可以通过 `docker ps` 查看其运行状态，并通过 `docker exec` 命令进入容器，**容器内默认已经安装了 `oh-my-zsh`，可以做直接已 `zsh` 进入**
+容器运行后，可以通过 `docker ps` 查看其运行状态，并通过 `docker exec` 命令进入容器
 
 ``` sh
-docker exec -it build zsh
+docker exec -it build bash
 ```
 
-如果不习惯 `zsh` 也可以使用 `bash` 进入容器，只需替换命令即可；交叉编译时请确保 C 编译器为 `arm-linux-gcc`，即可以声明变量 `export CC=/home/asuswrt-merlin/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3/bin/arm-linux-gcc`
+交叉编译时请确保 C 编译器为 `arm-linux-gcc`，即可以声明变量 `export CC=/home/asuswrt-merlin/release/src-rt-6.x.4708/toolchains/hndtools-arm-linux-2.6.36-uclibc-4.5.3/bin/arm-linux-gcc`
 
 
 
