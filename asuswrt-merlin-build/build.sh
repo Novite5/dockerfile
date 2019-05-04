@@ -30,7 +30,7 @@ main(){
     echo -e -n "${COLOR_PINK}setting Environment...${COLOR_END}"
     CROSS_TOOLCHAINS_DIR=/opt/brcm-arm
     export PATH=$PATH:/opt/brcm/hndtools-mipsel-linux/bin:/opt/brcm/hndtools-mipsel-uclibc/bin:/opt/brcm-arm/bin
-    export LD_LIBRARY_PATH=$CROSS_TOOLCHAINS_DIR/lib
+    export LD_LIBRARY_PATH=$CROSS_TOOLCHAINS_DIR/lib:/usr/local/lib:/usr/lib
     echo -e " ${COLOR_GREEN}done${COLOR_END}"
     #echo "$PATH"
 }
